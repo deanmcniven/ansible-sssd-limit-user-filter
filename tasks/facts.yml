@@ -1,0 +1,7 @@
+---
+- name: Set username to default value
+  become: false
+  set-fact:
+    sssd_filter_username: "{{local_user_username}}"
+  when: sssd_filter_username is not defined
+

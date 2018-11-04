@@ -1,0 +1,11 @@
+---
+- name: Create SSSD config to restrict login user
+  become: true
+  notify: Restart SSSD Daemon
+  template:
+    src: sssd-limit-user-filter.j2
+    dest: /etc/sssd/conf.d/restrict-login.conf
+    owner: root
+    group: root
+    mode: 0600
+

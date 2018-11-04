@@ -1,0 +1,5 @@
+---
+- name: Restart SSSD Daemon
+  systemd:
+    name: sssd
+    state: restarted
